@@ -19,19 +19,10 @@ const Todo = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // setData((prev) => [
-    //   ...prev,
-    //   { id: nextId, task: inputRef.current.value, done: false },
-    // ]);
-
-    let incomingData = {
-      id: nextId,
-      task: inputRef.current.value,
-      done: false,
-    };
-    let updated = [...data, incomingData];
-    console.log(incomingData, updated);
-    setData(updated);
+    setData((prev) => [
+      ...prev,
+      { id: nextId, task: inputRef.current.value, done: false },
+    ]);
     setNextId((prev) => prev + 1);
   };
 
